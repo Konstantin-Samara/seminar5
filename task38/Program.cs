@@ -26,11 +26,13 @@ if ((Number>0)&&(LeftBorder1<RightBorder1))
     array = IntRandomArrayFromToSize(LeftBorder1,RightBorder1,Number);
     Console.WriteLine($"[{string.Join("; ",array)}]");
     double max = array[0];
-    double min = array[0];    
+    double min = array[0];
+    int CountMax = 0;
+    int CountMin = 0;    
     for (int i=0; i<Number;i++) {
-        if (array[i]>max) {max = array[i];}
-        if (array[i]<min) {min = array[i];}
+        if (array[i]>max) {max = array[i];CountMax = i;}
+        if (array[i]<min) {min = array[i];CountMin = i;}
     }
-       Console.WriteLine($"Разница между MAX и MIN элементами = {Math.Round((max-min)*100)/100}");}
+       Console.WriteLine($"Разница между MAX(инд.{CountMax} ,знач.{max}) и MIN(инд.{CountMin} ,знач.{min}) элементами = {Math.Round((max-min)*100)/100}");}
 
 else {Console.WriteLine("Введены некорректные данные");}
